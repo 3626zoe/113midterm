@@ -1,4 +1,4 @@
-/* Global Styles */
+/* 全局設置 (Global Styles) */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +6,15 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body */
 body {
     max-width: 1920px;
     margin: 0 auto;
+    line-height: 1.6;
     color: #333;
 }
 
-/* Header / Navigation */
+/* 導覽列 (Header / Navigation) */
 header {
     background-color: #b0acac;
     display: flex;
@@ -21,39 +23,122 @@ header {
     padding: 20px;
 }
 
-.nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav {
     width: 100%;
-    max-width: 1200px;
-}
-
-.nav-links {
+    background-color: #ccc;
+    height: 150px;
     display: flex;
-    list-style-type: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
-.nav-links li {
-    margin-right: 20px;
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: flex-end;
 }
 
-.nav-links a {
+nav ul li {
+    position: relative;
+    margin: 0 5px;
+}
+
+nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    padding: 8px 50px;
+    display: block;
 }
 
-.logo {
-    font-size: 24px;
+nav ul li a:hover {
+    background-color: #ddd;
+    border-radius: 0px;
+}
+
+/* 下拉選單 (Dropdown Menu) */
+nav ul li > ul {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 120px;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul li ul li {
+    background-color: white;
+    padding: 5px 10px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+nav ul li ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul li ul li:hover {
+    background-color: #ddd;
+}
+
+/* 導覽列標題和左右連結 (Nav Title and Right Links) */
+.nav-title {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
     font-family: serif;
 }
 
-.book-btn a {
-    text-decoration: none;
-    color: #333;
+.nav-links {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 20px;
+    top: 105px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .icon {
+    margin-right: 10px;
+}
+
+.nav-right .book-btn {
     background-color: #d0d0d0;
     padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* 間距 (Spacer) */
+.spacer {
+    height: 45px;
+    background-color: #f0f0f0;
 }
 
 /* Interior Design Section */
@@ -171,4 +256,3 @@ footer p {
     color: #333;
     text-decoration: none;
 }
-
